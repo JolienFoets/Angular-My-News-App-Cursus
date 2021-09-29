@@ -7,6 +7,9 @@ import { ArticleComponent } from './article/article.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContactComponent } from './contact/contact.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { ShortenContentPipe } from './shorten-content.pipe';
+import { TitleFullcapsPipe } from './title-fullcaps.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ContactComponent } from './contact/contact.component';
     ArticleComponent,
     HomeComponent,
     MenuComponent,
-    ContactComponent
+    ContactComponent,
+    ArticleDetailComponent,
+    ShortenContentPipe,
+    TitleFullcapsPipe
   ],
   imports: [
     BrowserModule,
