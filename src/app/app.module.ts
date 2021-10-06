@@ -11,6 +11,8 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 import { ShortenContentPipe } from './shorten-content.pipe';
 import { TitleFullcapsPipe } from './title-fullcaps.pipe';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { TitleFullcapsPipe } from './title-fullcaps.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

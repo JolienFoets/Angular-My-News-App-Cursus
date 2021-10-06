@@ -1,68 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Article } from './article';
 
+import { HttpClient } from '@angular/common/http';
+import { Observable, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
-  private articles: Article[] = [];
 
-  constructor() {
-    let article1: Article = {
-      id: 1,
-      title: "Title article",
-      subtitle: "Subtitle article",
-      imageUrl: "https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=134",
-      imageCaption: "caption image",
-      content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas sequi voluptatum pariatur! Quae cumque
-      quidem dolor maxime enim debitis omnis nemo facilis sequi autem? Quae tenetur, repellat vero deleniti vitae
-      dolores? Cum tempore, mollitia provident placeat fugit earum, sint, quae iusto optio ea officiis consectetur sit
-      necessitatibus itaque explicabo?`,
-      author: "Michaël Cloots",
-      publishDate: "28/11/2020",
-      editor: "Jolien Foets"
-    };
-
-    let article2: Article = {
-      id: 2,
-      title: "Title article 2",
-      subtitle: "Subtitle article 2",
-      imageUrl: "https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=134",
-      imageCaption: "caption image 2",
-      content: `2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas sequi voluptatum pariatur! Quae cumque
-      quidem dolor maxime enim debitis omnis nemo facilis sequi autem? Quae tenetur, repellat vero deleniti vitae
-      dolores? Cum tempore, mollitia provident placeat fugit earum, sint, quae iusto optio ea officiis consectetur sit
-      necessitatibus itaque explicabo?`,
-      author: "Florian Smeyers",
-      publishDate: "30/11/2020",
-      editor: "Jolien Foets"
-    };
-
-    let article3: Article = {
-      id: 3,
-      title: "Title article 3",
-      subtitle: "Subtitle article 3",
-      imageUrl: "https://images.pexels.com/photos/38296/cycling-bicycle-riding-sport-38296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      imageCaption: "caption image 3",
-      content: `2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas sequi voluptatum pariatur! Quae cumque
-      quidem dolor maxime enim debitis omnis nemo facilis sequi autem? Quae tenetur, repellat vero deleniti vitae
-      dolores? Cum tempore, mollitia provident placeat fugit earum, sint, quae iusto optio ea officiis consectetur sit
-      necessitatibus itaque explicabo?`,
-      author: "Jolien Foets",
-      publishDate: "28/09/2021",
-      editor: "Jolien Foets"
-    };
-
-    this.articles.push(article1);
-    this.articles.push(article2);
-    this.articles.push(article3);
-   }
-
-   getArticles(): Article[] {
-    return this.articles;
+  constructor(private httpClient: HttpClient) {
   }
 
-  getArticleById(id: number) : Article | null {
-    return this.articles.find(a=>a.id === id) ?? null;
+  getArticles(): Observable<Article[]> {
+    return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Article[]>("http://localhost:3000/articles")));
+ }
+
+  getArticleById(id: number): Observable<Article> {
+    return this.httpClient.get<Article>("http://localhost:3000/articles/" + id);
   }
+
 }
