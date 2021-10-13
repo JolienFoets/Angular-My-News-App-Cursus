@@ -7,6 +7,7 @@ export interface Article {
   content: string;
   author: string;
   publishDate: string;
-  editor: String;
+  editor: string;
   categoryId: number;
+  statusId: number;
 }

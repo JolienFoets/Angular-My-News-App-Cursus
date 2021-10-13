@@ -12,9 +12,11 @@ import { ShortenContentPipe } from './shorten-content.pipe';
 import { TitleFullcapsPipe } from './title-fullcaps.pipe';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
+import { StatusListComponent } from './status-list/status-list.component';
+import { StatusFormComponent } from './status-form/status-form.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,16 @@ import { CategoryFormComponent } from './category-form/category-form.component';
     ShortenContentPipe,
     TitleFullcapsPipe,
     CategoryListComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    StatusListComponent,
+    StatusFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

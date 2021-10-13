@@ -9,7 +9,8 @@
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas sequi voluptatum pariatur! Quae cumque quidem dolor maxime enim debitis omnis nemo facilis sequi autem? Quae tenetur, repellat vero deleniti vitae dolores? Cum tempore, mollitia provident placeat fugit earum, sint, quae iusto optio ea officiis consectetur sit necessitatibus itaque explicabo?",
       "author": "Michaël Cloots",
       "publishDate": "28/11/2020",
-      "categoryId": 1
+      "categoryId": 1,
+      "statusId": 1
     },
     {
       "id": 2,
@@ -20,18 +21,20 @@
       "content": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas sequi voluptatum pariatur! Quae cumque quidem dolor maxime enim debitis omnis nemo facilis sequi autem? Quae tenetur, repellat vero deleniti vitae dolores? Cum tempore, mollitia provident placeat fugit earum, sint, quae iusto optio ea officiis consectetur sit necessitatibus itaque explicabo?",
       "author": "Florian Smeyers",
       "publishDate": "30/11/2020",
-      "categoryId": 2
+      "categoryId": 2,
+      "statusId": 3
     },
     {
       "id": 3,
-      "title": "Kip Tandoori",
-      "subtitle": "Mosselen Tandoori",
+      "title": "Title article 3",
+      "subtitle": "Subtitle article 3",
       "imageUrl": "https://images.pexels.com/photos/6599106/pexels-photo-6599106.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "imageCaption": "caption image",
       "content": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas sequi voluptatum pariatur! Quae cumque quidem dolor maxime enim debitis omnis nemo facilis sequi autem? Quae tenetur, repellat vero deleniti vitae dolores? Cum tempore, mollitia provident placeat fugit earum, sint, quae iusto optio ea officiis consectetur sit necessitatibus itaque explicabo?",
       "author": "Jolien Foets",
       "publishDate": "6/10/2021",
-      "categoryId": 1
+      "categoryId": 1,
+      "statusId": 2
     }
   ],
   "categories": [
@@ -54,6 +57,28 @@
     {
       "id": 5,
       "name": "food"
+    }
+  ],
+  "statuses": [
+    {
+      "name": "Draft",
+      "active": true,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "to review",
+      "active": false
+    },
+    {
+      "id": 3,
+      "name": "published",
+      "active": true
+    },
+    {
+      "name": "Concept",
+      "active": true,
+      "id": 4
     }
   ]
 }
