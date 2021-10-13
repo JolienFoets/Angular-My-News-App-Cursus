@@ -8,4 +8,5 @@ export interface Article {
   author: string;
   publishDate: string;
   editor: String;
+  categoryId: number;
 }
